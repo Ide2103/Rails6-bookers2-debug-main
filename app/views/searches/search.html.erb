@@ -1,4 +1,8 @@
-<h2>Books search for "test"</h2>
+<% if @range == "user" %>
+  <h3>Users search for name</h3>
+<% else  %>
+  <h3>Books search for title</h3>
+<% end %>
 
 <table class="table table-hover table-inverse">
   <% if @range == "User" %>
