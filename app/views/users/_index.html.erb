@@ -11,15 +11,7 @@
       <tr>
         <td><%= image_tag user.get_profile_image, size: '50x50' %></td>
         <td><%= user.name %></td>
-        <td>
-          <% if current_user.following?(user) %>
-            <%= link_to "フォロー外す", unfollow_path(user.id), method: :POST, class: "btn btn-success btn-block" do %>
-            <% end %>
-          <% else %>
-            <%= link_to "フォローする" , follow_path(user.id), method: :POST, class: "btn btn-success btn-block" do %>
-            <% end %>
-          <% end %>
-        </td>
+        <td><td><%= render "relationships/btn", user: user %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
     <% end %>
